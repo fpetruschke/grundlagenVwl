@@ -58,24 +58,80 @@
 							<div class="col-md-12">
 								<div class="panel panel-default">
 									<div class="panel-heading">
-										<h3 class="panel-title">Angebot & Nachfrage Graph</h3>
+										<h3 class="panel-title">interaktiver Angebot & Nachfrage Graph</h3>
 									</div>
 									<div class="panel-body">
 										<div class="row">
 											<div class="col-md-4">
-												<p>
-													Der Graph stellt die Steuerung von Angebot und Nachfrage durch die Preise dar.<br>
-													Steigt der Preis pro angebotener Mengen-Einheit, sinkt die Nachfrage.<br>
-													Sinkt der Preis pro angebotener Mengen-Einheit, steigt die Nachfrage.<br>
-												</p>
+												<div class="alert alert-info" role="alert">
+													Der Graph stellt die Steuerung von Angebot und Nachfrage durch die Preise dar.<br><br>
+													Steigt der Preis pro angebotener Mengen-Einheit, sinkt die Nachfrage.<br><br>
+													Sinkt der Preis pro angebotener Mengen-Einheit, steigt die Nachfrage.<br><br>
+												</div>
+												<div class="alert alert-success" role="alert">
+													Die <strong>x-Achse</strong> stellt die nachgefragte/angebotene <strong>Menge</strong> dar.<br>
+													Die <strong>y-Achse</strong> stellt den <strong>Preis</strong> dar.
+												</div>
 											</div>
 											<div class="col-md-4">
 												<canvas id="angebotNachfrageChart" width="100" height="100"></canvas>
 											</div>
 											<div class="col-md-4">
-												<div class="alert alert-success" role="alert">
-													<strong>Info:</strong> Die x-Achse stellt die nachgefragte/angebotene Menge dar.<br>
-													Die y-Achse stellt den Preis dar.
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">Folgende Szenarien lassen sich anhand dieses Modells beobachten:</h3>
+									</div>
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-4">
+												<p>
+													<strong>Überschussangebot : </strong><br>
+													Liegt der Preis liegt über dem Gleichgewicht bieten die Unternehmen mehr an als nachgefragt wird.
+													Sie blieben auf einem Teil ihrer Produktion sitzen.
+													Es besteht ein Überschussangebot.
+													Deshalb senken sie ihren Preis.
+													Nun werden die Nachfrager mehr kaufen.
+													Gleichzeitig scheiden einige Unternehmen aus dem Markt aus, da sie zu dem geringeren Preis nicht anbieten wollen oder können.
+													Der Markt kehrt zum Gleichgewicht zurück.
+												</p>
+											</div>
+											<div class="col-md-4">
+												<p>
+													<strong>Markträumender Gleichgewichtspreis : </strong><br>
+													Der Markträumende Preis (oder auch Gleichgewichtspreis) beschreibt das Szenario, wenn weder zu viel, noch zu wenig angeboten und nachgefragt wird.
+													Der Markt befindet sich im Gleichgewicht.
+													Beide Seiten haben keinen Grund ihr Verhalten zu ändern.
+													Somit ergibt sich sowohl der Preis, als auch die Menge aus dem Zusammenspiel von Angebot und Nachfrage.
+													Aus individueller Sicht von Haushalten und Unternehmen entsteht so ein Preis, auf den beide keinen Einfluss haben.
+												</p>
+											</div>
+											<div class="col-md-4">
+												<p>
+													<strong>Überschussnachfrage : </strong><br>
+													Liegt der Preis unter dem Gleichgewicht besteht eine Überschussnachfrage.
+													Mehr Nachfrager wollen kaufen, als die Anbieter verkaufen wollen.
+													Hier können die Unternehmen ihre Preise anheben, da sie trotz steigender Preise ihr gesamtes Angebot absetzen können.
+													Der Preis wird nun auf dem Markt steigen, bis wieder das Gleichgewicht erreicht ist.
+												</p>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<div class="alert alert-info" role="alert">
+													<div class="text-center">
+														<strong>Egal ob der Preis nun zu hoch oder zu niedrig ist, der Markt strebt immer zu einem Gleichgewicht.</strong>
+													</div>
+												</div>
+												<div class="text-right">
+													<a href="https://www.wiwiweb.de/mikrooekonomik/grundlagen/statik/gleichgewich.html" target="_blank">[Quelle: wiwiweb.de/]</a>
 												</div>
 											</div>
 										</div>
@@ -83,6 +139,9 @@
 								</div>
 							</div>
 						</div>
+
+
+
 						<!-- back home -->
 						<div class="row">
 							<div class="col-md-4"></div>
