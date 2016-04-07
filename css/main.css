@@ -63,3 +63,7 @@ footer:hover:before{
 	background: url("http://i.imgur.com/iYjFs9i.gif") no-repeat;
 	background-size: 100%;
 }
+
+img {
+	width: 100%;
+}
