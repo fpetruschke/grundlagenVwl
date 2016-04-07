@@ -7,11 +7,10 @@
 
         <link href="../css/bootstrap.css" rel="stylesheet">
         <link href="../css/main.css" rel="stylesheet">
-        
+
         <title>OuG5 Grundlagen der VWL</title>
     </head>
     <body>
-
         <div class="container">
             <div class="row">
                 <div class="panel panel-default">
@@ -28,8 +27,13 @@
 										<h3 class="panel-title">Angebot</h3>
 									</div>
 									<div class="panel-body">
-									    <quote>3. (Wirtschaft) Gesamtheit der GÃ¼ter (Waren und Dienstleistungen), die auf den Markt kommen</li></quote>
-										<a href="http://www.duden.de/rechtschreibung/Angebot" target="_blank">[Quelle: Duden.de]</a>
+									    <quote>
+											Menge an Gütern i.w.S., die zum Verkauf oder Tausch angeboten wird.<br>
+											Als wichtigste Determinante des Angebots wird der Preis angesehen.<br>
+											Erfasst wird das Angebotsverhalten durch Angebotsfunktionen.<br>
+											Dabei besteht typischerweise ein positiver Zusammenhang zwischen Güterpreisniveau und dem zugehörigen Angebot.<br>
+										</quote>
+										<a href="http://wirtschaftslexikon.gabler.de/Definition/angebot.html" target="_blank">[Quelle: wirtschaftslexikon.gabler.de]</a>
 									</div>
 								</div>
 							</div>
@@ -39,22 +43,44 @@
 										<h3 class="panel-title">Nachfrage</h3>
 									</div>
 									<div class="panel-body">
-									    <quote>2. (Kaufmannssprache) Bereitschaft zum Kauf bestimmter Waren</li></quote>
-										<a href="http://www.duden.de/rechtschreibung/Nachfrage" target="_blank">[Quelle: Duden.de]</a>
+									    <quote>
+											1. Begriff: Entscheidung und Streben der Wirtschaftssubjekte, Güter [...] zu erwerben.<br>
+											Als wichtigste Determinante der Nachfrage wird der Preis angesehen. [...]<br>
+										</quote>
+										<a href="http://wirtschaftslexikon.gabler.de/Definition/nachfrage.html" target="_blank">[Quelle: wirtschaftslexikon.gabler.de]</a>
 									</div>
 								</div>
 							</div>
 						</div>
 						<!-- content -->
+						<!-- graph -->
 						<div class="row">
-							<div class="col-md-4">
-								<div class="well">CONTENT</div>
-							</div>
-							<div class="col-md-4">
-								<div class="well">CONTENT</div>
-							</div>
-							<div class="col-md-4">
-								<div class="alert alert-success" role="alert"><strong>Info</strong> zus&auml;tzlicher Info-Kram</div>
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">Angebot & Nachfrage Graph</h3>
+									</div>
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-4">
+												<p>
+													Der Graph stellt die Steuerung von Angebot und Nachfrage durch die Preise dar.<br>
+													Steigt der Preis pro angebotener Mengen-Einheit, sinkt die Nachfrage.<br>
+													Sinkt der Preis pro angebotener Mengen-Einheit, steigt die Nachfrage.<br>
+												</p>
+											</div>
+											<div class="col-md-4">
+												<canvas id="angebotNachfrageChart" width="100" height="100"></canvas>
+											</div>
+											<div class="col-md-4">
+												<div class="alert alert-success" role="alert">
+													<strong>Info:</strong> Die x-Achse stellt die nachgefragte/angebotene Menge dar.<br>
+													Die y-Achse stellt den Preis dar.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<!-- back home -->
@@ -76,5 +102,90 @@
 
         <script src="../js/jquery.js"></script>
         <script src="../js/bootstrap.js"></script>
+		<script src="../js/moments.js"></script>
+		<script src="../js/Chart.min.js"></script>
+		<script>
+			var ctx = $("#angebotNachfrageChart");
+			var data = {
+				labels: ["0", "25", "50", "75", "100"],
+				datasets: [
+					{
+						label: "Angebot",
+
+						// Boolean - if true fill the area under the line
+						fill: true,
+
+						// String - the color to fill the area under the line with if fill is true
+						backgroundColor: "rgba(161,193,210,0.2)",
+
+						// The properties below allow an array to be specified to change the value of the item at the given index
+
+						// String or array - Line color
+						borderColor: "rgba(161,193,210,1)",
+
+						// String - cap style of the line. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap
+						borderCapStyle: 'butt',
+
+						// Array - Length and spacing of dashes. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/setLineDash
+						borderDash: [],
+
+						// Number - Offset for line dashes. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineDashOffset
+						borderDashOffset: 0.0,
+
+						// String - line join style. See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
+						borderJoinStyle: 'miter',
+
+						// String or array - Point stroke color
+						pointBorderColor: "rgba(220,220,220,1)",
+
+						// String or array - Point fill color
+						pointBackgroundColor: "#acacac",
+
+						// Number or array - Stroke width of point border
+						pointBorderWidth: 1,
+
+						// Number or array - Radius of point when hovered
+						pointHoverRadius: 5,
+
+						// String or array - point background color when hovered
+						pointHoverBackgroundColor: "rgba(220,220,220,1)",
+
+						// Point border color when hovered
+						pointHoverBorderColor: "rgba(220,220,220,1)",
+
+						// Number or array - border width of point when hovered
+						pointHoverBorderWidth: 2,
+
+						// Tension - bezier curve tension of the line. Set to 0 to draw straight Wlines connecting points
+						tension: 0.1,
+
+						// The actual data
+						data: [0, 25, 50, 75, 100],
+
+						// String - If specified, binds the dataset to a certain y-axis. If not specified, the first y-axis is used. First id is y-axis-0
+						yAxisID: "y-axis-0",
+					},
+					{
+						label: "Nachfrage",
+						fill: true,
+						backgroundColor: "rgba(255,159,34,0.2)",
+						borderColor: "rgba(255,159,34,1)",
+						pointBorderColor: "rgba(255,159,34,1)",
+						pointBackgroundColor: "#fff",
+						pointBorderWidth: 1,
+						pointHoverRadius: 5,
+						pointHoverBackgroundColor: "rgba(220,220,220,1)",
+						pointHoverBorderColor: "rgba(220,220,220,1)",
+						pointHoverBorderWidth: 2,
+						data: [100, 75, 50, 25, 0]
+					}
+				]
+			};
+			Chart.defaults.global.responsive = true;
+			var myLineChart = new Chart(ctx, {
+				type: 'line',
+				data: data
+			});
+		</script>
     </body>
 </html>
