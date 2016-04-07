@@ -52,3 +52,14 @@ quote {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+footer:hover:before{
+	position: absolute;
+	content: '';
+	top: -70px;
+	left: 0;
+	width: 100px;
+	height: 100px;
+	background: url("http://i.imgur.com/iYjFs9i.gif") no-repeat;
+	background-size: 100%;
+}
