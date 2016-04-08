@@ -7,7 +7,16 @@
 
         <link href="../css/bootstrap.css" rel="stylesheet">
         <link href="../css/main.css" rel="stylesheet">
-        
+		<link href="../css/jquery-ui/jquery-ui.min.css" rel="stylesheet">
+		<link href="../css/jquery-ui/jquery-ui.theme.min.css" rel="stylesheet">
+
+		<!-- custom style for calculation -->
+		<style>
+			td.upper_line { border-top:solid 1px black; }
+			table.fraction { text-align: center; vertical-align: middle;
+				margin-top:0.5em; margin-bottom:0.5em; line-height: 2em; }
+		</style>
+
         <title>OuG5 Grundlagen der VWL</title>
     </head>
     <body>
@@ -36,18 +45,301 @@
 						</div>
 						<!-- content -->
 						<div class="row">
-							<div class="col-md-4">
-								<div class="well">CONTENT</div>
+							<div class="col-md-12">
+								<div class="alert alert-success" role="alert">
+									<strong>Hinweis: </strong>
+									Die VWL beschäftigt sich mit der Modellierung der Märkte.
+									Um aussagekräftige Modelle erstellen zu könnne, bedarf es bestimmter Messgrößen.
+									Drei Standart-Messgrößen sollen hier angesprochen werden.
+								</div>
 							</div>
-							<div class="col-md-4">
-								<div class="well">CONTENT</div>
-							</div>
-							<div class="col-md-4">
-								<div class="alert alert-info" role="alert"><strong>Info</strong> zus&auml;tzlicher Info-Kram</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div id="accordion">
+									<h3>Rentabilität</h3>
+									<div>
+										<div class="row">
+											<div class="col-md-7">
+												<quote>
+													<ul>
+														<li>[...][Die] Ausgaben verhalten sich zu den Einnahmen so, dass am Ende des Geschäftsjahres ein Gewinn erwirtschaftet werden kann.</li>
+														<li>Der Gewinn ist der Berag, welcher nach Abzug aller Steuern und Ausgaben noch bleibt.</li>
+														<li>Die Rentabilität ist dann die Kennziffer, die Auskunft darüber gibt, inwieweit das Unternehmen wirtschaftlich arbeitet.</li>
+													</ul>
+												</quote>
+												<a href="http://rentabilitaet.net/" target="_blank">[Quelle: rentabilitaet.net]</a>
+											</div>
+											<div class="col-md-5" style="margin-top: 20px;">
+												<div class="well">
+													<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+														<tr>
+															<td rowspan="2" nowrap="nowrap">
+																<i>Rentabilität</i>&nbsp;=&nbsp;
+															</td>
+															<td nowrap="nowrap">
+																<i>Gewinn * 100 </i>
+															</td>
+														</tr>
+														<tr>
+															<td class="upper_line">
+																eingesetztes Kapital
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-info">
+											<div class="panel-heading">
+												<h3 class="panel-title">Beispiel</h3>
+											</div>
+											<div class="panel-body">
+												<strong>Nehmen wir an, wir betrachten zwei kleine Unternehmen:</strong>
+												<div class="row">
+													<div class="col-md-6">
+														<ul class="list-group">
+															<li class="list-group-item"><strong>Unternehmen A...</strong></li>
+															<li class="list-group-item">hat 5 Arbeiter, die jeweils 35,-&euro;/Std. bekommen</li>
+															<li class="list-group-item">Zusammen arbeiten die Angestellten 2 Stunden, um ein Produkt zu erstellen.</li>
+															<li class="list-group-item">Der Gewinn für das Produkt beträgt 700,-&euro;</li>
+															<li class="list-group-item"><strong>Gewinn:</strong> 700,-&euro;</li>
+															<li class="list-group-item"><strong>eingesetztes Kapitel:</strong> (5*35,-&euro;)*2 = 350,-&euro;</li>
+														</ul>
+													</div>
+													<div class="col-md-6">
+														<ul class="list-group">
+															<li class="list-group-item"><strong>Unternehmen B...</strong></li>
+															<li class="list-group-item">hat 10 Arbeiter, die jeweils 8,50-&euro;/Std. bekommen.</li>
+															<li class="list-group-item">Ein zu dem von A produzierten vergleichbares Produkt wird innerhalb von 5 Stunden erstellt.</li>
+															<li class="list-group-item">Der Gewinn für das Produkt beträgt 500,-&euro;</li>
+															<li class="list-group-item"><strong>Gewinn:</strong> 500,-&euro;</li>
+															<li class="list-group-item"><strong>eingesetztes Kapitel:</strong> (10*8,50&euro;)*5 = 425,-&euro;</li>
+														</ul>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="well">
+															<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td rowspan="2" nowrap="nowrap">
+																		<i><strong>Rentabilität A</strong> = 200,-&euro;</i>&nbsp;=&nbsp;
+																	</td>
+																	<td nowrap="nowrap">
+																		<i>700,-&euro; * 100 </i>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="upper_line">
+																		350,-&euro;
+																	</td>
+																</tr>
+															</table>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="well">
+															<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td rowspan="2" nowrap="nowrap">
+																		<i><strong>Rentabilität B</strong> = 117,65&euro;</i>&nbsp;=&nbsp;
+																	</td>
+																	<td nowrap="nowrap">
+																		<i>500,-&euro; * 100 </i>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="upper_line">
+																		425,-&euro;
+																	</td>
+																</tr>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<h3>Wirtschaftlichkeit</h3>
+									<div>
+										<div class="row">
+											<div class="col-md-9">
+												<quote>
+													<ul>
+														<li>1. [...] Ausdruck dafür, inwieweit eine Tätigkeit dem Wirtschaftlichkeitsprinzip genügt.</li>
+														<li>2. Ausprägungsformen:</li>
+														<ul>
+															<li><strong>Absolute Wirtschaftlichkeit: </strong><br>
+																[...]Beziehung zwischen dem Handlungsergebnis und dem dafür erforderlichen Mitteleinsatz.
+																Der Wert des Handlungsergebnisses und des Mitteleinsatzes wird durch die jeweils relevanten Ziele festgelegt [...]
+																(Erträge und Aufwendungen oder Erlöse und Kosten)
+															</li>
+														</ul>
+														<ul>
+															<li><strong>Relative Wirtschaftlichkeit: </strong><br>
+																Beziehung zur absoluten Wirtschaftlichkeit einer anderen Handlung.
+															</li>
+														</ul>
+													</ul>
+												</quote>
+												<br><a href="http://wirtschaftslexikon.gabler.de/Definition/wirtschaftlichkeit.html" target="_blank">[Quelle: wirtschaftslexikon.gabler.de]</a>
+											</div>
+											<div class="col-md-3" style="margin-top: 20px;">
+												<div class="well">
+													<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+														<tr>
+															<td rowspan="2" nowrap="nowrap">
+																<i>Wirtschaftlichkeit</i>&nbsp;=&nbsp;
+															</td>
+															<td nowrap="nowrap">
+																<i>Leistung</i>
+															</td>
+														</tr>
+														<tr>
+															<td class="upper_line">
+																Kosten
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-info">
+											<div class="panel-heading">
+												<h3 class="panel-title">Beispiel</h3>
+											</div>
+											<div class="panel-body">
+												<div class="row">
+													<div class="col-md-6">
+														<ul class="list-group">
+															<li class="list-group-item"><strong>absolute Wirtschaftlichkeit</strong></li>
+															<li class="list-group-item">
+																Ein Investitionsprojekt ist z.B. dann absolut wirtschaftlich, wenn sein Kapitalwert größer als Null ist
+															</li>
+														</ul>
+													</div>
+													<div class="col-md-6">
+														<ul class="list-group">
+															<li class="list-group-item"><strong>relative Wirtschaftlichkeit</strong></li>
+															<li class="list-group-item">
+																Ein Investitionsprojekt A ist z.B. dann relativ wirtschaftlich gegenüber einem Projekt B,
+																wenn sein Kapitalwert größer ist, unabhängig davon, ob er Null übersteigt oder nicht.
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<h3>Produktivität</h3>
+									<div>
+										<div class="row">
+											<div class="col-md-7">
+												<quote>
+													Verhältnis von Produktionsergebnis (Output) und an seiner Erstellung beteiligten Inputs.
+													Messzahlen zur Produktivität werden u.a. herangezogen für Analysen des Wachstums, internationale, interregionale und intertemporale Vergleiche. Meist wird Produktivität mit Arbeitsproduktivität gleichgesetzt.
+												</quote>
+												<br><a href="http://wirtschaftslexikon.gabler.de/Definition/produktivitaet.html" target="_blank">[Quelle: wirtschaftslexikon.gabler.de]</a>
+											</div>
+											<div class="col-md-5">
+												<div class="well">
+													<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+														<tr>
+															<td rowspan="2" nowrap="nowrap">
+																<i>Produktivität</i>&nbsp;=&nbsp;
+															</td>
+															<td nowrap="nowrap">
+																<i>Menge out</i>
+															</td>
+														</tr>
+														<tr>
+															<td class="upper_line">
+																Menge in
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+										<div class="panel panel-info">
+											<div class="panel-heading">
+												<h3 class="panel-title">Beispiel</h3>
+											</div>
+											<div class="panel-body">
+												<strong>Nehmen wir an, wir betrachten zwei kleine Unternehmen:</strong>
+												<div class="row">
+													<div class="col-md-6">
+														<ul class="list-group">
+															<li class="list-group-item"><strong>Unternehmen A...</strong></li>
+															<li class="list-group-item">hat 5 Arbeiter, die jeweils 35,-&euro;/Std. bekommen</li>
+															<li class="list-group-item">Zusammen arbeiten die Angestellten 2 Stunden, um ein Produkt zu erstellen.</li>
+															<li class="list-group-item">Der Gewinn für das Produkt beträgt 700,-&euro;</li>
+															<li class="list-group-item"><strong>Output:</strong> 700,-&euro;</li>
+															<li class="list-group-item"><strong>Input:</strong> (5*35,-&euro;)*2 = 350,-&euro;</li>
+														</ul>
+													</div>
+													<div class="col-md-6">
+														<ul class="list-group">
+															<li class="list-group-item"><strong>Unternehmen B...</strong></li>
+															<li class="list-group-item">hat 10 Arbeiter, die jeweils 8,50-&euro;/Std. bekommen.</li>
+															<li class="list-group-item">Ein zu dem von A produzierten vergleichbares Produkt wird innerhalb von 5 Stunden erstellt.</li>
+															<li class="list-group-item">Der Gewinn für das Produkt beträgt 500,-&euro;</li>
+															<li class="list-group-item"><strong>Output:</strong> 500,-&euro;</li>
+															<li class="list-group-item"><strong>Input:</strong> (10*8,50&euro;)*5 = 425,-&euro;</li>
+														</ul>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="well">
+															<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td rowspan="2" nowrap="nowrap">
+																		<i><strong>Produktivität A</strong> = 2</i>&nbsp;=&nbsp;
+																	</td>
+																	<td nowrap="nowrap">
+																		<i>700,-&euro;</i>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="upper_line">
+																		350,-&euro;
+																	</td>
+																</tr>
+															</table>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="well">
+															<table class="fraction" align="center" cellpadding="0" cellspacing="0">
+																<tr>
+																	<td rowspan="2" nowrap="nowrap">
+																		<i><strong>Produktivität B</strong> = 1,18&euro;</i>&nbsp;=&nbsp;
+																	</td>
+																	<td nowrap="nowrap">
+																		<i>500,-&euro;</i>
+																	</td>
+																</tr>
+																<tr>
+																	<td class="upper_line">
+																		425,-&euro;
+																	</td>
+																</tr>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<!-- back home -->
-						<div class="row">
+						<div class="row" style="margin-top: 20px;">
 							<div class="col-md-4"></div>
 							<div class="col-md-4">
 								<button type="button" class="btn btn-default btn-lg" onclick="window.location.href = '../startseite.html';">zur&uuml;ck zur Startseite</button>
@@ -65,5 +357,15 @@
 
         <script src="../js/jquery.js"></script>
         <script src="../js/bootstrap.js"></script>
+		<script src="../js/jquery-ui.min.js"></script>
+		<script>
+			$(function() {
+				$( "#accordion" ).accordion({
+					active: true,
+					collapsible: true,
+					heightStyle: "content"
+				});
+			});
+		</script>
     </body>
 </html>
